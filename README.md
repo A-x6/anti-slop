@@ -9,7 +9,7 @@ Most agent output is sycophancy with a diff attached: praise first, a new packag
 ## What You Get
 
 Canonical rules live once in rules/ and every tool file is generated from them by scripts/sync.sh.
-Six short files, each under 120 lines so they stay cheap on every request: roast personality with 12 templates, package diet, surgical diffs, clean TypeScript, real tests, comment discipline.
+Seven short files, each under 120 lines so they stay cheap on every request: roast personality with 12 templates, think-first, package diet, surgical diffs, clean TypeScript, real tests, comment discipline.
 A CI check fails when generated files drift from a fresh sync.
 
 ## Sample Roasts Hall of Fame
@@ -194,56 +194,56 @@ Keep comments only for non-obvious why, such as a platform workaround or a busin
 
 ## Quick Start
 
-Replace REPO_URL with the raw file root of your fork, then run the one copy command for your tool.
+Every command below pulls from the public repo at github.com/A-x6/anti-slop. Run the one copy command for your tool.
 
 Bolt:
 
 ```sh
-mkdir -p .bolt/skills/anti-slop .bolt/agent && curl -fsSL REPO_URL/.bolt/skills/anti-slop/SKILL.md -o .bolt/skills/anti-slop/SKILL.md && curl -fsSL REPO_URL/.bolt/agent/toxic-roaster.md -o .bolt/agent/toxic-roaster.md
+mkdir -p .bolt/skills/anti-slop .bolt/agent && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.bolt/skills/anti-slop/SKILL.md -o .bolt/skills/anti-slop/SKILL.md && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.bolt/agent/toxic-roaster.md -o .bolt/agent/toxic-roaster.md
 ```
 
 OpenCode:
 
 ```sh
-mkdir -p .opencode/agents && curl -fsSL REPO_URL/AGENTS.md -o AGENTS.md && curl -fsSL REPO_URL/.opencode/agents/toxic-roaster.md -o .opencode/agents/toxic-roaster.md
+mkdir -p .opencode/agents && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/AGENTS.md -o AGENTS.md && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.opencode/agents/toxic-roaster.md -o .opencode/agents/toxic-roaster.md
 ```
 
 Claude Code:
 
 ```sh
-mkdir -p .claude/rules && curl -fsSL REPO_URL/CLAUDE.md -o CLAUDE.md && curl -fsSL REPO_URL/.claude/rules/toxic-roaster.md -o .claude/rules/toxic-roaster.md
+mkdir -p .claude/rules && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/CLAUDE.md -o CLAUDE.md && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.claude/rules/toxic-roaster.md -o .claude/rules/toxic-roaster.md
 ```
 
 Devin and Windsurf:
 
 ```sh
-mkdir -p .devin/rules .windsurf/rules && curl -fsSL REPO_URL/DEVIN.md -o DEVIN.md && curl -fsSL REPO_URL/.windsurfrules -o .windsurfrules && curl -fsSL REPO_URL/.devin/rules/anti-slop.md -o .devin/rules/anti-slop.md && curl -fsSL REPO_URL/.windsurf/rules/anti-slop.md -o .windsurf/rules/anti-slop.md
+mkdir -p .devin/rules .windsurf/rules && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/DEVIN.md -o DEVIN.md && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.windsurfrules -o .windsurfrules && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.devin/rules/anti-slop.md -o .devin/rules/anti-slop.md && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.windsurf/rules/anti-slop.md -o .windsurf/rules/anti-slop.md
 ```
 
-Devin Desktop prefers .devin/rules/ and still reads .windsurf/rules/ and the legacy .windsurfrules. Devin also reads AGENTS.md on its own, capped at 16 KiB per file, and this repo ships AGENTS.md at about 10 KiB so it loads whole. No loader documents a bare DEVIN.md; it ships for completeness alongside the paths Devin does read.
+Devin Desktop prefers .devin/rules/ and still reads .windsurf/rules/ and the legacy .windsurfrules. Devin also reads AGENTS.md on its own, capped at 16 KiB per file, and this repo ships AGENTS.md at about 11 KiB so it loads whole. No loader documents a bare DEVIN.md; it ships for completeness alongside the paths Devin does read.
 
 Cursor:
 
 ```sh
-mkdir -p .cursor/rules && curl -fsSL REPO_URL/.cursor/rules/anti-slop.mdc -o .cursor/rules/anti-slop.mdc && curl -fsSL REPO_URL/.cursorrules -o .cursorrules
+mkdir -p .cursor/rules && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.cursor/rules/anti-slop.mdc -o .cursor/rules/anti-slop.mdc && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.cursorrules -o .cursorrules
 ```
 
 GitHub Copilot:
 
 ```sh
-mkdir -p .github && curl -fsSL REPO_URL/.github/copilot-instructions.md -o .github/copilot-instructions.md
+mkdir -p .github && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.github/copilot-instructions.md -o .github/copilot-instructions.md
 ```
 
 Cline:
 
 ```sh
-mkdir -p .cline/rules && curl -fsSL REPO_URL/.clinerules -o .clinerules && curl -fsSL REPO_URL/.cline/rules/anti-slop.md -o .cline/rules/anti-slop.md
+mkdir -p .cline/rules && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.clinerules -o .clinerules && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.cline/rules/anti-slop.md -o .cline/rules/anti-slop.md
 ```
 
 Roo Code:
 
 ```sh
-mkdir -p .roo/rules && curl -fsSL REPO_URL/.roo/rules/anti-slop.md -o .roo/rules/anti-slop.md
+mkdir -p .roo/rules && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.roo/rules/anti-slop.md -o .roo/rules/anti-slop.md
 ```
 
 Roo Code does not read .clinerules, so it gets its own file under .roo/rules/.
@@ -251,7 +251,7 @@ Roo Code does not read .clinerules, so it gets its own file under .roo/rules/.
 Aider:
 
 ```sh
-curl -fsSL REPO_URL/CONVENTIONS.md -o CONVENTIONS.md && aider --read CONVENTIONS.md
+curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/CONVENTIONS.md -o CONVENTIONS.md && aider --read CONVENTIONS.md
 ```
 
 Aider persistent config, placed in .aider.conf.yml at your project root:
@@ -264,7 +264,7 @@ read:
 Zed:
 
 ```sh
-curl -fsSL REPO_URL/.rules -o .rules
+curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.rules -o .rules
 ```
 
 ## Compatibility
@@ -282,7 +282,7 @@ curl -fsSL REPO_URL/.rules -o .rules
 | Aider | CONVENTIONS.md plus read flag or config line | Manual via flag or config | Verified against Aider conventions docs |
 | Zed | .rules | Auto, first match wins | Verified against Zed instructions docs |
 
-Each generated rule file stays near 10 KiB, inside the 12 KiB per-file cap on Windsurf workspace rules and the 16 KiB Devin injection cap on AGENTS.md.
+Each generated rule file stays near 11 KiB, inside the 12 KiB per-file cap on Windsurf workspace rules and the 16 KiB Devin injection cap on AGENTS.md.
 
 ## Turning It Off
 
@@ -296,10 +296,14 @@ Does this make the agent worse at coding?
 No. The directives are engineering-correct on their own: stdlib first, smallest diff, honest types, real assertions, no narration comments. The roast is tone. The fix is the same fix a calm reviewer would ship.
 
 Can I tone it down?
-Yes. Keep the six engineering files and swap roast-personality.md severity to silent or mild only. Regenerate with scripts/sync.sh so every tool target stays in sync.
+Yes. Keep the seven rule files and swap roast-personality.md severity to silent or mild only. Regenerate with scripts/sync.sh so every tool target stays in sync.
 
 Can I add my own roasts?
 Yes. Append a template to rules/roast-personality.md following the two-sentence cap, keep the file under 120 lines, run scripts/sync.sh, and open a pull request. See CONTRIBUTING.md.
+
+## Inspiration
+
+The engineering spine follows the Karpathy skills collection at github.com/forrestchang/andrej-karpathy-skills: think before coding, simplicity first, surgical changes, goal-driven execution through tests. anti-slop keeps that spine, adds package diet, comment discipline, and TypeScript realism, and wraps it in a staff-engineer persona that roasts the bloat and ships the fix in the same reply. The prompt archives at github.com/elder-plinius/CL4R1T4S and github.com/jujumilk3/leaked-system-prompts were reviewed for how production agent prompts pair blunt assessment with concrete output. Nothing was copied from them.
 
 ## Source of Truth
 

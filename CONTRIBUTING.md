@@ -37,7 +37,7 @@ sh scripts/sync.sh
 git status --short
 ```
 
-Update README.md Quick Start with one copy command using the REPO_URL placeholder.
+Update README.md Quick Start with one copy command using the raw file URL.
 Add one row to the Compatibility table with files installed, loaded mode, and status.
 Add the new paths to this file list when they change what contributors must touch.
 Open a pull request with the script change, the regenerated files, and the README update.
@@ -48,5 +48,5 @@ CI runs scripts/sync.sh and fails when generated files differ, so never commit h
 All files in rules/ are under 120 lines.
 scripts/sync.sh runs twice with identical output.
 git diff shows no drift after a fresh sync.
-README.md commands use REPO_URL and contain no comments.
+README.md commands use the raw file URL and contain no comments.
 All fix snippets run or typecheck where applicable.
