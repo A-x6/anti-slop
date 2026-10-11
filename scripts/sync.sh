@@ -4,6 +4,7 @@ ROOT_DIR=$(CDPATH= cd "$(dirname "$0")/.." && pwd)
 HEADER_LINE="Generated from rules/ by scripts/sync.sh. Do not edit directly."
 RULES_DIR="$ROOT_DIR/rules"
 ROAST_FILE="$RULES_DIR/roast-personality.md"
+THINK_FILE="$RULES_DIR/think-first.md"
 DIET_FILE="$RULES_DIR/package-diet.md"
 DIFFS_FILE="$RULES_DIR/surgical-diffs.md"
 TYPES_FILE="$RULES_DIR/clean-typescript.md"
@@ -11,7 +12,7 @@ TESTS_FILE="$RULES_DIR/test-reality.md"
 NOTES_FILE="$RULES_DIR/comments.md"
 mkdir -p "$ROOT_DIR/.bolt/skills/anti-slop" "$ROOT_DIR/.bolt/agent" "$ROOT_DIR/.opencode/agents" "$ROOT_DIR/.claude/rules" "$ROOT_DIR/.cursor/rules" "$ROOT_DIR/.github" "$ROOT_DIR/.devin/rules" "$ROOT_DIR/.windsurf/rules" "$ROOT_DIR/.cline/rules" "$ROOT_DIR/.roo/rules"
 append_rules() {
-  cat "$ROAST_FILE" "$DIET_FILE" "$DIFFS_FILE" "$TYPES_FILE" "$TESTS_FILE" "$NOTES_FILE"
+  cat "$ROAST_FILE" "$THINK_FILE" "$DIET_FILE" "$DIFFS_FILE" "$TYPES_FILE" "$TESTS_FILE" "$NOTES_FILE"
 }
 write_plain() {
   {
