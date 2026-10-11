@@ -1,0 +1,13 @@
+name: sync-check
+on:
+  push:
+  pull_request:
+jobs:
+  generated-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Regenerate tool files
+        run: sh scripts/sync.sh
+      - name: Fail on drift
+        run: git diff --exit-code --stat
