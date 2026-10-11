@@ -267,6 +267,18 @@ Zed:
 curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.rules -o .rules
 ```
 
+Gemini CLI:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/GEMINI.md -o GEMINI.md
+```
+
+Amazon Q Developer:
+
+```sh
+mkdir -p .amazonq/rules && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.amazonq/rules/anti-slop.md -o .amazonq/rules/anti-slop.md
+```
+
 ## Compatibility
 
 | Tool | Files installed | Loaded | Status |
@@ -281,8 +293,12 @@ curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.rules -o .rule
 | Roo Code | .roo/rules/anti-slop.md | Auto for all modes | Verified: Roo reads .roo/rules, not .clinerules |
 | Aider | CONVENTIONS.md plus read flag or config line | Manual via flag or config | Verified against Aider conventions docs |
 | Zed | .rules | Auto, first match wins | Verified against Zed instructions docs |
+| Gemini CLI | GEMINI.md | Auto, traverses the directory tree | Verified: GEMINI.md is the native format |
+| Amazon Q Developer | .amazonq/rules/anti-slop.md | Auto in IDE and CLI | Verified against AWS project rules docs |
 
 Each generated rule file stays near 11 KiB, inside the 12 KiB per-file cap on Windsurf workspace rules and the 16 KiB Devin injection cap on AGENTS.md.
+
+No extra files needed for these tools. They read the repo AGENTS.md natively: OpenAI Codex with a 32 KiB combined cap, Amp with CLAUDE.md fallback, Kilo Code with AGENTS.md as primary, Factory Droid, Google Jules, JetBrains Junie, VS Code agent mode, and Android Studio Gemini. If one of them is your daily driver, installing AGENTS.md alone covers you.
 
 ## Turning It Off
 
