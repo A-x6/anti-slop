@@ -10,7 +10,7 @@ DIFFS_FILE="$RULES_DIR/surgical-diffs.md"
 TYPES_FILE="$RULES_DIR/clean-typescript.md"
 TESTS_FILE="$RULES_DIR/test-reality.md"
 NOTES_FILE="$RULES_DIR/comments.md"
-mkdir -p "$ROOT_DIR/.bolt/skills/anti-slop" "$ROOT_DIR/.bolt/agent" "$ROOT_DIR/.opencode/agents" "$ROOT_DIR/.claude/rules" "$ROOT_DIR/.cursor/rules" "$ROOT_DIR/.github" "$ROOT_DIR/.devin/rules" "$ROOT_DIR/.windsurf/rules" "$ROOT_DIR/.cline/rules" "$ROOT_DIR/.roo/rules" "$ROOT_DIR/.amazonq/rules"
+mkdir -p "$ROOT_DIR/.bolt/skills/anti-slop" "$ROOT_DIR/.bolt/agent" "$ROOT_DIR/.opencode/agents" "$ROOT_DIR/.claude/rules" "$ROOT_DIR/.cursor/rules" "$ROOT_DIR/.github" "$ROOT_DIR/.devin/rules" "$ROOT_DIR/.windsurf/rules" "$ROOT_DIR/.cline/rules" "$ROOT_DIR/.roo/rules" "$ROOT_DIR/.amazonq/rules" "$ROOT_DIR/.kiro/steering" "$ROOT_DIR/.qoder/rules" "$ROOT_DIR/.trae/rules"
 append_rules() {
   cat "$ROAST_FILE" "$THINK_FILE" "$DIET_FILE" "$DIFFS_FILE" "$TYPES_FILE" "$TESTS_FILE" "$NOTES_FILE"
 }
@@ -48,6 +48,13 @@ write_devin_rule() {
     append_rules
   } > "$1"
 }
+write_kiro_steering() {
+  {
+    printf '%s\n' "---" "inclusion: always" "---" ""
+    printf '%s\n\n' "$HEADER_LINE"
+    append_rules
+  } > "$1"
+}
 write_plain "$ROOT_DIR/.bolt/agent/toxic-roaster.md"
 write_plain "$ROOT_DIR/AGENTS.md"
 write_plain "$ROOT_DIR/CLAUDE.md"
@@ -68,3 +75,6 @@ write_opencode_agent "$ROOT_DIR/.opencode/agents/toxic-roaster.md"
 write_cursor_rule "$ROOT_DIR/.cursor/rules/anti-slop.mdc"
 write_devin_rule "$ROOT_DIR/.devin/rules/anti-slop.md"
 write_devin_rule "$ROOT_DIR/.windsurf/rules/anti-slop.md"
+write_devin_rule "$ROOT_DIR/.qoder/rules/anti-slop.md"
+write_kiro_steering "$ROOT_DIR/.kiro/steering/anti-slop.md"
+write_cursor_rule "$ROOT_DIR/.trae/rules/anti-slop.md"

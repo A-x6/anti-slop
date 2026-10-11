@@ -279,6 +279,24 @@ Amazon Q Developer:
 mkdir -p .amazonq/rules && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.amazonq/rules/anti-slop.md -o .amazonq/rules/anti-slop.md
 ```
 
+Kiro IDE:
+
+```sh
+mkdir -p .kiro/steering && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.kiro/steering/anti-slop.md -o .kiro/steering/anti-slop.md
+```
+
+Qoder:
+
+```sh
+mkdir -p .qoder/rules && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.qoder/rules/anti-slop.md -o .qoder/rules/anti-slop.md
+```
+
+Trae IDE:
+
+```sh
+mkdir -p .trae/rules && curl -fsSL https://raw.githubusercontent.com/A-x6/anti-slop/main/.trae/rules/anti-slop.md -o .trae/rules/anti-slop.md
+```
+
 ## Compatibility
 
 | Tool | Files installed | Loaded | Status |
@@ -295,6 +313,9 @@ mkdir -p .amazonq/rules && curl -fsSL https://raw.githubusercontent.com/A-x6/ant
 | Zed | .rules | Auto, first match wins | Verified against Zed instructions docs |
 | Gemini CLI | GEMINI.md | Auto, traverses the directory tree | Verified: GEMINI.md is the native format |
 | Amazon Q Developer | .amazonq/rules/anti-slop.md | Auto in IDE and CLI | Verified against AWS project rules docs |
+| Kiro IDE | .kiro/steering/anti-slop.md | Auto, inclusion always | Verified against Kiro steering docs |
+| Qoder | .qoder/rules/anti-slop.md | Auto, trigger always_on | Verified against Qoder rules and memory docs |
+| Trae IDE | .trae/rules/anti-slop.md | Auto with alwaysApply | Verified against Trae rules docs |
 
 Each generated rule file stays near 11 KiB, inside the 12 KiB per-file cap on Windsurf workspace rules and the 16 KiB Devin injection cap on AGENTS.md.
 
