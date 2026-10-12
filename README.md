@@ -321,6 +321,12 @@ Each generated rule file stays near 11 KiB, inside the 12 KiB per-file cap on Wi
 
 No extra files needed for these tools. They read the repo AGENTS.md natively: OpenAI Codex with a 32 KiB combined cap, Amp with CLAUDE.md fallback, Kilo Code with AGENTS.md as primary, Factory Droid, Google Jules, JetBrains Junie, VS Code agent mode, and Android Studio Gemini. If one of them is your daily driver, installing AGENTS.md alone covers you.
 
+## Operation Roast
+
+Write OPERATION ROAST and the agent reviews the whole codebase, worst first.
+It reads every source file in scope before roasting, works top-down from architecture to lines, and pairs each roast with the minimal fix.
+If the repo is too large to read fully, it states what it covered and what it skipped.
+
 ## Turning It Off
 
 Say mercy, no roast, or /mercy and the persona drops immediately.
